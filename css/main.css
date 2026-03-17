@@ -1,0 +1,277 @@
+:root{
+  --ny-max: 1200px;
+  --ny-h: clamp(100px, 38vw, 420px);
+
+  --toy-w: 120px;
+  --toy-h: 220px;
+  --toy-top: var(--chain-h);
+
+  --chain-w: 32px;
+  --chain-h: 120px;
+  --chain-x: 0px;
+  --chain-y: 0px;
+  --pivot-y: 0px;
+
+  --chain3-top: 80px;
+  --chain3-left: 50%;
+  --chain3-x: 12px;
+  --chain3-y: -30px;
+  --chain3-w: 32px;
+  --chain3-h: 130px;
+}
+
+*,
+*::before,
+*::after{ box-sizing:border-box; }
+
+body{ margin:0; padding:0; }
+
+.ny-banner{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+}
+
+.ny-banner__inner{
+  position:relative;
+  width:min(var(--ny-max), 100%);
+  margin-inline:auto;
+  height:var(--ny-h);
+  overflow:hidden;
+  --s: 1;
+  --chain3-top: 90px;
+  --chain3-left: 50%;
+  --chain3-x: 12px;
+  --chain3-y: -30px;
+  --chain3-w: 32px;
+  --chain3-h: 130px;
+}
+
+.ny-banner img{
+  display:block;
+  max-width:100%;
+  height:auto;
+  user-select:none;
+  pointer-events:none;
+}
+
+.ny-banner__bg{
+  position:absolute;
+  inset:0 auto auto 50%;
+  transform:translateX(-50%);
+  width:min(95%, var(--ny-max));
+  z-index:0;
+}
+
+.ny-banner__decor{
+  position:absolute;
+  top:clamp(56px, 10vw, 90px);
+  left:0;
+  width:100%;
+  z-index:2;
+  overflow:visible;
+  transform: translateY(var(--decor-y, 0px));
+  transform-origin: top center;
+}
+
+.ny-banner__hanger{
+  position:absolute;
+  top:0;
+  left:var(--hanger-left, 50%);
+  transform:translateX(-50%);
+  width: calc(var(--toy-w) * var(--s));
+  height: calc((var(--toy-top, var(--chain-h)) + var(--toy-h)) * var(--s));
+  transform-origin: 50% calc(var(--pivot-y) * var(--s));
+  will-change:transform;
+  
+}
+
+.ny-banner__toy-chain{
+  position:absolute;
+  top:0;
+  left:50%;
+  width: calc(var(--chain-w) * var(--s));
+  height: calc(var(--chain-h) * var(--s));
+  transform: translateX(-50%) translate(calc(var(--chain-x) * var(--s)), calc(var(--chain-y) * var(--s)));
+  background:url("../img/chain.png") center top/contain repeat-y;
+  pointer-events:none;
+  z-index:var(--chain-z, 1);
+}
+
+.ny-banner__chain3{
+  position:absolute;
+  z-index:1;
+  top: calc(var(--chain3-top) * var(--s));
+  left:var(--chain3-left);
+  width: calc(var(--chain3-w) * var(--s));
+  height: calc(var(--chain3-h) * var(--s));
+  background:url("../img/chain.png") center top/contain repeat-y;
+  pointer-events:none;
+  transform: translateX(-50%)
+    translate(calc(var(--chain3-x) * var(--s)), calc(var(--chain3-y) * var(--s)));
+  transform-origin:50% 0;
+}
+
+.ny-banner__toy-img{
+  position:absolute;
+  top: calc(var(--toy-top, var(--chain-h)) * var(--s));
+  left:50%;
+  transform:translateX(-50%);
+  width:100%;
+  height:auto;
+  z-index:var(--toy-z, 1);
+}
+
+.ny-banner__hanger--1{
+  --hanger-left:10%;
+  --chain-w:clamp(22px, 5vw, 100px);
+  --chain-h:clamp(90px, 14vw, 130px);
+  --chain-x:0px;
+  --chain-y:clamp(-50px, -5vw, -34px);
+  --pivot-y:var(--chain-y);
+  --toy-top:clamp(0px, 1vw, 8px);
+  --toy-w:clamp(90px, 14vw, 150px);
+  --toy-h:clamp(120px, 18vw, 180px);
+}
+
+.ny-banner__hanger--2{
+  --hanger-left:29%;
+  --chain-h:clamp(90px, 14vw, 130px);
+  --toy-top:clamp(-12px, -1vw, -10px);
+  --chain-x:0px;
+  --chain-y:clamp(-100px, -9vw, -70px);
+  --pivot-y:var(--chain-y);
+  --toy-w:clamp(95px, 15vw, 160px);
+  --toy-h:clamp(130px, 20vw, 190px);
+}
+
+.ny-banner__hanger--3{
+  --hanger-left:50%;
+  --toy-z:8;
+  --chain-h:clamp(90px, 14vw, 130px);
+  --toy-top:clamp(0px, 1.2vw, 10px);
+  --chain-x:clamp(6px, 1vw, 12px);
+  --chain-y:clamp(-30px, -3vw, -18px);
+  --toy-w:clamp(150px, 24vw, 260px);
+  --toy-h:clamp(150px, 24vw, 260px);
+}
+
+.ny-banner__hanger--4{
+  --hanger-left:71%;
+  --chain-h:clamp(90px, 14vw, 130px);
+  --toy-top:clamp(0px, 1.6vw, 15px);
+  --chain-y:clamp(-30px, -3vw, -18px);
+  --pivot-y:var(--chain-y);
+  --toy-w:clamp(90px, 14vw, 155px);
+  --toy-h:clamp(130px, 20vw, 200px);
+}
+
+.ny-banner__hanger--5{
+  --hanger-left:87%;
+  --chain-h:clamp(90px, 14vw, 130px);
+  --toy-top:clamp(-25px, -2vw, -12px);
+  --chain-x:clamp(4px, 1vw, 10px);
+  --chain-y:clamp(-50px, -5vw, -30px);
+  --pivot-y:var(--chain-y);
+  --toy-w:clamp(85px, 13vw, 140px);
+  --toy-h:clamp(120px, 18vw, 180px);
+}
+
+.ny-banner__hanger--3 .ny-banner__toy-chain{ display:none; }
+
+.ny-banner__branch-bg{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:3;
+}
+
+.ny-banner__branch-top{
+  position:absolute;
+  top:0;
+  left:44%;
+  transform:translateX(-50%);
+  z-index:2;
+  width:clamp(160px, 28vw, 360px);
+}
+
+.ny-banner__title{
+  position:absolute;
+  left:50%;
+  bottom:clamp(10px, 2.5vw, 24px);
+  transform:translateX(-50%);
+  z-index:5;
+  width:min(90%, 980px);
+}
+
+.ny-banner__snow{
+  position:absolute;
+  inset:0;
+  z-index:99;
+  pointer-events:none;
+}
+
+.ny-banner__snowflake{
+  position:absolute;
+  width:clamp(18px, 3.2vw, 40px);
+  height:auto;
+  top:-60px;
+  left:0;
+  z-index:99;
+}
+
+.ny-banner__flake{
+  position:absolute;
+  top:-60px;
+  will-change:transform;
+  pointer-events:none;
+  animation-name:ny-fall, ny-drift;
+  animation-timing-function:linear, ease-in-out;
+  animation-iteration-count:1, infinite;
+}
+
+@keyframes ny-fall{
+  from{ transform:translate3d(0, -60px, 0); }
+  to{ transform:translate3d(0, var(--fall-distance, 600px), 0); }
+}
+
+@keyframes ny-drift{
+  0%{ margin-left:0; }
+  50%{ margin-left:18px; }
+  100%{ margin-left:0; }
+}
+
+@keyframes ny-swing{
+  0%{ transform:translateX(-50%) rotate(0deg); }
+  25%{ transform:translateX(-50%) rotate(2.2deg); }
+  50%{ transform:translateX(-50%) rotate(0deg); }
+  75%{ transform:translateX(-50%) rotate(-2.2deg); }
+  100%{ transform:translateX(-50%) rotate(0deg); }
+}
+
+@media (max-width: 900px){
+  .ny-banner__decor{ top:clamp(46px, 9vw, 72px); }
+  .ny-banner__branch-top{ left:50%; width:clamp(140px, 34vw, 300px); }
+  .ny-banner__inner{ --s: 0.9; }
+  .ny-banner__chain3 { --chain3-top:80px; height: 90px;}
+}
+
+@media (max-width: 640px){
+  .ny-banner__bg{ width:110%; }
+  .ny-banner__title{ width:min(92%, 520px); }
+  .ny-banner__hanger--1{ --hanger-left:15%; --chain-y:-70px;}
+  .ny-banner__hanger--2{ --hanger-left:32%; --chain-y:-90px;}
+  .ny-banner__hanger--4{ --hanger-left:68%; }
+  .ny-banner__hanger--5{ --hanger-left:84%; --chain-y:-50px;}
+  .ny-banner__inner{ --s: 0.6; }
+  .ny-banner__chain3 { --chain3-top:80px; height: 60px;}
+}
+
+@media (max-width: 420px){
+  .ny-banner__decor{ top:clamp(40px, 11vw, 60px); }
+  .ny-banner__bg{ width:120%; }
+  .ny-banner__branch-top{ width:clamp(130px, 20vw, 240px); }
+  .ny-banner__inner{ --s: 0.5; }
+  .ny-banner__chain3 { --chain3-top:60px; }
+}
