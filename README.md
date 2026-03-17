@@ -2,7 +2,7 @@
 Адаптивный интерактивный новогодний баннер с анимациями: падающий снег, раскачивающиеся игрушки и декоративные элементы.
 
 ## Превью
-![Превью](./assets/preview.gif)
+![Превью](/screenshots/banner-n-y-26-preview.gif)
 
 ## Демо:
 [Перейти](https://segas-segason.github.io/banner-new-year-2026/)
@@ -19,26 +19,39 @@
 ## Структура проекта
 
 ny-banner/
-- index.html
--- css/
---- main.css
--- scripts/
---- ny-banner.js
--- img/
---- bg.png
---- chain.png
---- happy-new-year-2026.png
---- tree-branch/
----- tree-branch-1.png
----- tree-branch-bg.png
---- christmas-toys/
----- christmas-toys-1.png
----- christmas-toys-2.png
----- christmas-toys-3.png
----- christmas-toys-4.png
----- christmas-toys-5.png
----- snowflake/
-- README.md
+│
+├── index.html
+├── README.md
+│
+├── css/
+│   └── main.css
+│
+├── scripts/
+│   └── ny-banner.js
+│
+└── img/
+    ├── bg.png
+    ├── chain.png
+    ├── happy-new-year-2026.png
+    │
+    ├── tree-branch/
+    │   ├── tree-branch-1.png
+    │   └── tree-branch-bg.png
+    │
+    ├── christmas-toys/
+    │   ├── christmas-toys-1.png
+    │   ├── christmas-toys-2.png
+    │   ├── christmas-toys-3.png
+    │   ├── christmas-toys-4.png
+    │   └── christmas-toys-5.png
+    │
+    └── snowflake/
+        ├── snowflake-1.png
+        ├── snowflake-2.png
+        ├── snowflake-3.png
+        ├── snowflake-4.png
+        ├── snowflake-5.png
+        └── snowflake-6.png
 
 ## Как это работает
 
