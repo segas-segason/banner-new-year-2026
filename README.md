@@ -18,6 +18,9 @@
 
 ## Структура проекта
 
+## 📁 Структура проекта
+
+```bash
 ny-banner/
 │
 ├── index.html
@@ -52,6 +55,7 @@ ny-banner/
         ├── snowflake-4.png
         ├── snowflake-5.png
         └── snowflake-6.png
+```
 
 ## Как это работает
 
