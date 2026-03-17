@@ -2,7 +2,7 @@
 Адаптивный интерактивный новогодний баннер с анимациями: падающий снег, раскачивающиеся игрушки и декоративные элементы.
 
 ## Превью
-![Превью](/screenshots/banner-n-y-26-preview.gif)
+![Превью](/screenshots/banner-n-y-26-preview.png)
 
 ## Демо:
 [Перейти](https://segas-segason.github.io/banner-new-year-2026/)
